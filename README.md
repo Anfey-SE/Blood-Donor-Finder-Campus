@@ -46,7 +46,7 @@ This solution minimizes response time and improves coordination in critical situ
 
 ## 🔗 Important Links
 
-- **GitHub Repository:** [Insert your repo link here]  
+- **GitHub Repository:** [https://github.com/Anfey-SE/Blood-Donor-Finder-Campus.git]  
 - **Trello Board:** [Insert your Trello board link here]  
 
 ## 🧾 Current Progress
