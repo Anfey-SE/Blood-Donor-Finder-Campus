@@ -32,9 +32,9 @@ This solution minimizes response time and improves coordination in critical situ
 
 ## 🧩 Tools & Technologies
 
-- **Frontend:** HTML, CSS, JavaScript  
-- **Backend:** (To be finalized — c++)  
-- **Database:** (To be selected)  
+- **Frontend:** HTML, CSS 
+- **Backend:** PHP  
+- **Database:** text files
 - **Version Control:** GitHub  
 - **Task Management:** Trello  
 
@@ -47,7 +47,7 @@ This solution minimizes response time and improves coordination in critical situ
 ## 🔗 Important Links
 
 - **GitHub Repository:** [https://github.com/Anfey-SE/Blood-Donor-Finder-Campus.git]  
-- **Trello Board:** [Insert your Trello board link here]  
+- **Trello Board:** [https://trello.com/invite/b/68e693812e530b170cbf9116/ATTI20c66adfc4d44a00e1ab1e9c53a41e8e7E1A5EC8/blood-donor-finder-iteration-0]  
 
 ## 🧾 Current Progress
 
@@ -57,7 +57,8 @@ This solution minimizes response time and improves coordination in critical situ
 - Roles assigned  
 - Trello and GitHub setup done  
 
-Next Step → *Iteration-1: Prototype Development* 🚀  
+Campus Blood Donor Finder – Sprint 1 complete. All features implemented: registration, login, profile update, blood request, search, notifications, admin verification, reset password, availability, and donation history.
+ 
 
 ## ⚖️ License
 This project is licensed under the **MIT License** — free for educational and open-source use.
