@@ -58,6 +58,26 @@ This solution minimizes response time and improves coordination in critical situ
 - Trello and GitHub setup done  
 
 Campus Blood Donor Finder – Sprint 1 complete. All features implemented: registration, login, profile update, blood request, search, notifications, admin verification, reset password, availability, and donation history.
+## Installation & Running
+1. Install XAMPP on your machine.
+2. Copy the project folder to `C:/xampp/htdocs/`.
+3. Start Apache from XAMPP Control Panel.
+4. Open your browser and navigate to: `http://localhost/your_project_folder_name/index.html`
+
+## Project Structure
+- `index.html` – Home page
+- `register.html` / `register.php` – Registration
+- `login.html` / `login.php` – Login
+- `profile.html` / `profile.php` – Donor profile update
+- `request.html` / `request.php` – Blood request submission
+- `search.html` / `search.php` – Donor search
+- `reset.html` / `reset.php` – Password reset
+- `availability.html` / `availability.php` – Mark donor availability
+- `admin.html` / `admin.php` – Admin profile verification
+- `history.html` / `history.php` / `viewhistory.php` – Donation history
+- `style.css` – Stylesheet
+- `donors.txt`, `requests.txt`, `history.txt` – Data files
+
  
 
 ## ⚖️ License
