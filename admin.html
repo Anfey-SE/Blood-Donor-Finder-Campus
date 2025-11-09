@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Verification | Blood Donor Finder</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+ <nav class="navbar">
+  <div class="logo"><i class="fa-solid fa-droplet"></i> Blood Donor Finder</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="register.html">Register</a>
+    <a href="login.html">Login</a>
+    <a href="search.html">Search</a>
+    <a href="request.html">Request</a>
+    <a href="profile.html">Profile</a>
+    <a href="reset.html">Reset Password</a>
+    <a href="availability.html">Availability</a>
+    <a href="admin.html">Admin</a>
+    <a href="history.html">Record Donation</a>
+    <a href="viewhistory.php">View History</a>
+  </div>
+</nav>
+
+  <section class="form-section">
+    <h2><i class="fa-solid fa-user-shield"></i> Verify Donor Profiles</h2>
+    <form action="admin.php" method="POST">
+      <input type="email" name="email" placeholder="Enter donor email to verify" required><br>
+      <button type="submit">Mark as Verified</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Campus Blood Donor Finder | Made with <i class="fa-solid fa-heart"></i> to save lives</p>
+  </footer>
+</body>
+</html>

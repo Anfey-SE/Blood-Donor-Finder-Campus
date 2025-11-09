@@ -1,0 +1,218 @@
+/* ---- BLOOD DONOR FINDER: Dark Red Professional Theme ---- */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #faf7f7;
+  color: #333;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8B0000;
+  padding: 15px 40px;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 14px;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.nav-links a:hover {
+  color: #ffcccc;
+  transform: translateY(-2px);
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+  background: linear-gradient(rgba(139,0,0,0.85), rgba(90,0,0,0.9)),
+              url('https://img.freepik.com/free-vector/realistic-red-blood-cells-medical-background_23-2148098125.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 140px 20px;
+}
+
+.hero-content {
+  max-width: 750px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 50px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.4);
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 35px;
+  color: #ffecec;
+}
+
+.hero-buttons .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  margin: 0 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background-color: #fff;
+  color: #8B0000;
+}
+.feature-card i {
+  font-size: 60px;
+  color: #8B0000;
+  margin-bottom: 15px;
+}
+/* ---------- FORM PAGES ---------- */
+.form-section {
+  background-color: #faf7f7;
+  text-align: center;
+  padding: 60px 0;
+}
+
+.form-section h2 {
+  color: #8B0000;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+form {
+  background-color: #fff;
+  display: inline-block;
+  padding: 35px 45px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  min-width: 330px;
+  text-align: left;
+}
+
+form input, form button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+form input:focus {
+  border-color: #8B0000;
+  outline: none;
+  box-shadow: 0 0 5px rgba(139,0,0,0.3);
+}
+
+form button {
+  background-color: #8B0000;
+  color: white;
+  border: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background-color: #5a0000;
+  transform: translateY(-2px);
+}
+
+.btn.primary:hover {
+  background-color: #ffeded;
+}
+
+.btn.secondary {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn.secondary:hover {
+  background-color: #fff;
+  color: #8B0000;
+}
+
+/* ---------- BLOOD CELLS BACKGROUND (subtle) ---------- */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, rgba(139,0,0,0.12) 20%, transparent 20%),
+                    radial-gradient(circle, rgba(139,0,0,0.10) 18%, transparent 20%),
+                    radial-gradient(circle, rgba(139,0,0,0.08) 20%, transparent 20%);
+  background-position: 20% 20%, 60% 80%, 90% 40%;
+  background-size: 180px 180px, 220px 220px, 150px 150px;
+  z-index: -1;
+}
+
+/* ---------- FEATURE CARDS ---------- */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 70px 20px;
+  background-color: #faf7f7;
+}
+
+.feature-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  width: 280px;
+  margin: 20px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-top: 5px solid #8B0000;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.feature-card img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+}
+
+.feature-card h3 {
+  color: #8B0000;
+  margin-bottom: 10px;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background-color: #8B0000;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  margin-top: 60px;
+  letter-spacing: 0.3px;
+}
