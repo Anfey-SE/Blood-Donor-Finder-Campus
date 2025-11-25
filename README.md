@@ -1,88 +1,177 @@
-# 🩸 Blood Donor Finder for Campus
+🩸 Blood Donor Finder for Campus
 
-A web-based platform that helps students quickly find compatible blood donors within their campus community during emergencies. Donors can register with their blood type and contact information, while requestors can search and filter donors based on blood group and location.
+A web-based platform designed to help students quickly locate compatible blood donors within the campus during emergencies. The system allows donors to register, manage their availability, and receive requests—while requestors can search, filter, and contact eligible donors instantly.
 
- 👩‍💻 Team Members
+👩‍💻 Team Members
+Name	Roll Number	Role
+Amna Hafeez	24i-3112	Scrum Master
+Humna Attique	24i-3097	Product Owner
+Sara Kamran	24i-3018	Development Team
+📘 Course Information
 
-| Member        | Roll Number | Role             |
-| Amna Hafeez   | 24i-3112    | Scrum Master     |
-| Humna Attique | 24i-3097    | Product Owner    |
-| Sara Kamran   | 24i-3018    | Development Team |
+Course: Intro to Software Engineering (SE-1001)
+Semester: Fall 2025
+Current Iteration: 3 (Full System + Admin Features)
 
-## 📘 Course Information
+🎯 Problem Statement
 
-**Course:** Intro to Software Engineering (SE-1001)  
-**Semester:** Fall 2025  
-**Iteration:** 0 – Planning Phase  
+Students often struggle to find blood donors quickly during emergencies. The Blood Donor Finder for Campus solves this by maintaining a centralized donor directory with real-time availability status, verified profiles, and request history tracking.
+The system reduces response time and improves coordination in critical situations.
 
-## 🎯 Problem Statement
+💡 Key Features
+👤 For Users (Donors + Requestors)
 
-During emergencies, students often face delays in finding suitable blood donors on campus. The “Blood Donor Finder for Campus” provides a centralized system where students can register as donors or request blood, ensuring quick and accurate matching through filters like blood group, location, and availability.  
-This solution minimizes response time and improves coordination in critical situations.
+Create an account with blood type
 
-## 💡 Key Features
+Login / Reset password
 
-- 🧍‍♂️ Register as a donor or requestor  
-- 🩸 Filter donors by blood group and campus location  
-- 📍 View available donors nearby  
-- 🔔 Send emergency alerts for urgent cases  
-- 🕓 Track donation and request history  
-- 💬 Feedback and rating system  
-- 📱 Responsive mobile-friendly interface  
+Update profile details
 
-## 🧩 Tools & Technologies
+Search for donors (filter by blood group)
 
-- **Frontend:** HTML, CSS 
-- **Backend:** PHP  
-- **Database:** text files
-- **Version Control:** GitHub  
-- **Task Management:** Trello  
+Submit blood requests
 
-## 👨‍💻 Roles & Responsibilities
+View own request history
 
-- **Product Owner:** Defines and prioritizes features, reviews progress.  
-- **Scrum Master:** Manages sprints, coordinates communication, removes blockers.  
-- **Development Team:** Designs, develops, and tests features per sprint goals.  
+Mark availability (Available / Not Available)
 
-## 🔗 Important Links
+Rate donors after completion
 
-- **GitHub Repository:** [https://github.com/Anfey-SE/Blood-Donor-Finder-Campus.git]  
-- **Trello Board:** [https://trello.com/invite/b/68e693812e530b170cbf9116/ATTI20c66adfc4d44a00e1ab1e9c53a41e8e7E1A5EC8/blood-donor-finder-iteration-0]  
+Submit feedback
 
-## 🧾 Current Progress
+🛠 For Admin
 
-✅ **Iteration-0 (Planning) Completed**  
-- Problem statement finalized  
-- Feature list and 28 user stories created  
-- Roles assigned  
-- Trello and GitHub setup done  
+View donor list
 
-Campus Blood Donor Finder – Sprint 1 complete. All features implemented: registration, login, profile update, blood request, search, notifications, admin verification, reset password, availability, and donation history.
-## Installation & Running
-1. Install XAMPP on your machine.
-2. Copy the project folder to `C:/xampp/htdocs/`.
-3. Start Apache from XAMPP Control Panel.
-4. Open your browser and navigate to: `http://localhost/your_project_folder_name/index.html`
+Verify/unverify donors
 
-## Project Structure
-- `index.html` – Home page
-- `register.html` / `register.php` – Registration
-- `login.html` / `login.php` – Login
-- `profile.html` / `profile.php` – Donor profile update
-- `request.html` / `request.php` – Blood request submission
-- `search.html` / `search.php` – Donor search
-- `reset.html` / `reset.php` – Password reset
-- `availability.html` / `availability.php` – Mark donor availability
-- `admin.html` / `admin.php` – Admin profile verification
-- `history.html` / `history.php` / `viewhistory.php` – Donation history
-- `style.css` – Stylesheet
-- `donors.txt`, `requests.txt`, `history.txt` – Data files
+Approve/reject blood requests
 
- 
+Post announcements
 
-## ⚖️ License
-This project is licensed under the **MIT License** — free for educational and open-source use.
+View statistics
 
----
+View recent requests
 
+Manage donor ratings
 
+Enable email notifications
+
+📁 Backend Structure
+
+Lightweight PHP backend
+
+Text-file based data storage (donors, requests, history, notifications, ratings)
+
+🧩 Tools & Technologies
+
+Frontend: HTML, CSS
+Backend: PHP
+Database: Text Files
+Version Control: Git & GitHub
+Task Management: Trello
+
+🔗 Important Links
+
+GitHub Repository: https://github.com/Anfey-SE/Blood-Donor-Finder-Campus
+
+Trello Board: https://trello.com/invite/b/68e693812e530b170cbf9116/ATTI20c66adfc4d44a00e1ab1e9c53a41e8e7E1A5EC8/blood-donor-finder-iteration-0
+
+🧾 Development Progress
+✔ Iteration 0 — Planning Completed
+
+Problem statement
+
+User stories (28)
+
+Feature list
+
+Roles assigned
+
+Repository + Trello setup
+
+✔ Iteration 1 — Basic User System Completed
+
+Registration & Login
+
+Donor profile update
+
+Password reset
+
+Blood requests
+
+Search & filter
+
+User availability
+
+Donation/request history
+
+✔ Iteration 2 — Enhanced Features Completed
+
+Rating system
+
+Feedback system
+
+Recent requests
+
+Admin dashboard basic structure
+
+✔ Iteration 3 — Full Admin + Data Integration Completed
+
+Announcements
+
+Notifications
+
+Approve/Reject requests
+
+Donor verification
+
+Statistics
+
+Full UI navbar on all pages
+
+Consistent text-file database structure
+
+📂 Project Structure
+index.html  
+login.html / login.php  
+register.html / register.php  
+profile.html / profile.php  
+request.html / request.php  
+search.html / search.php  
+reset.html / reset.php  
+availability.html / availability.php  
+rate_donor.html / rate_donor.php  
+feedback.html / feedback.php  
+history.html / history.php / viewHistory.php
+
+--- Admin ---
+admin.html / admin.php  
+admin_dashboard.php  
+announcements.html / announcements.php  
+approve_requests.php  
+recent_requests.php  
+statistics.php  
+view_donor_details.php  
+
+--- Data Files ---
+donors.txt  
+requests.txt  
+history.txt  
+notifications.txt  
+
+⚙ Installation & Running
+
+Install XAMPP
+
+Copy the project folder to:
+C:/xampp/htdocs/BloodDonorFinder/
+
+Start Apache
+
+Open in browser:
+http://localhost/BloodDonorFinder/index.html
+
+⚖ License
+
+This project is licensed under the MIT License, free for academic and open-source use.
