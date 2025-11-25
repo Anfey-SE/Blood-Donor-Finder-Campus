@@ -1,40 +1,27 @@
 <?php
-$email = $_POST['email'];
-$file  = "donors.txt";
-$temp  = "temp.txt";
-$found = false;
+session_start();
 
-$fr = fopen($file, "r");
-$fw = fopen($temp, "w");
-
-while(!feof($fr)) {
-    $line = trim(fgets($fr));
-    if($line == "") continue;
-    $parts = explode(",", $line);
-
-    // if donor email matches, mark verified
-    if(count($parts) >= 4 && trim($parts[1]) == $email) {
-        if(count($parts) == 4) {
-            $parts[] = "verified";
-        } else {
-            $parts[4] = "verified";
-        }
-        $found = true;
-    }
-    fwrite($fw, implode(",", $parts) . "\n");
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: admin.html'); exit;
 }
 
-fclose($fr);
-fclose($fw);
+$username = trim($_POST['username'] ?? '');
+$password = trim($_POST['password'] ?? '');
 
-if($found) {
-    rename($temp, $file);
-    echo "<h3 style='color:green; text-align:center;'>Donor marked as Verified!</h3>";
+if ($username === '' || $password === '') {
+    echo "<h3>Please enter both username and password.</h3><a href='admin.html'>Back</a>"; exit;
+}
+
+// set your admin credentials here
+$ADMIN_USER = 'admin';
+$ADMIN_PASS = '12345';
+
+if ($username === $ADMIN_USER && $password === $ADMIN_PASS) {
+    $_SESSION['is_admin'] = true;
+    $_SESSION['admin_user'] = $username;
+    header('Location: admin_dashboard.php'); exit;
 } else {
-    unlink($temp);
-    echo "<h3 style='color:red; text-align:center;'>Email not found in donor list.</h3>";
+    echo "<h3 style='color:red;text-align:center;'>Invalid admin credentials.</h3><div style='text-align:center;margin-top:18px;'><a href='admin.html'>Try Again</a></div>";
+    exit;
 }
-
-echo "<div style='text-align:center; margin-top:20px;'>
-<a href='admin.html'>Back to Admin</a></div>";
 ?>

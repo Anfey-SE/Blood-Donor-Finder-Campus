@@ -1,35 +1,72 @@
-<?php
-$email = $_POST['email'];
-$newpass = $_POST['newpass'];
+<nav class="navbar">
+  <div class="logo"><i class="fa-solid fa-droplet"></i> Blood Donor Finder</div>
 
-$file = "donors.txt";
-$temp = "temp.txt";
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="register.html">Register</a>
+    <a href="login.html">Login</a>
+    <a href="search.html">Search</a>
+    <a href="request.html">Request</a>
+    <a href="profile.html">Profile</a>
+    <a href="reset.html">Reset</a>
+    <a href="availability.html">Availability</a>
+    <a href="admin.html">Admin</a>
+    <a href="history.html">Record</a>
+    <a href="viewhistory.php">History</a>
+  </div>
+</nav>
+
+<?php
+$email = trim($_POST['email'] ?? '');
+$newpass = trim($_POST['newpass'] ?? '');
+
+if ($email === '' || $newpass === '') {
+    echo "<h3 style='color:red; text-align:center;'>All fields required.</h3>";
+    echo "<div style='text-align:center; margin-top:20px;'>
+            <a href='reset.html'>Back</a></div>";
+    exit;
+}
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "<h3 style='color:red; text-align:center;'>Invalid email format.</h3>";
+    exit;
+}
+
+$hash = password_hash($newpass, PASSWORD_DEFAULT);
+
+$src = "donors.txt";
+$tmp = "temp.txt";
+
+$fr = fopen($src, "r");
+$fw = fopen($tmp, "w");
+
 $found = false;
 
-$fr = fopen($file, "r");
-$fw = fopen($temp, "w");
+while (($line = fgets($fr)) !== false) {
+    $line = trim($line);
+    if ($line === "") continue;
 
-while(!feof($fr)) {
-    $line = trim(fgets($fr));
-    if($line == "") continue;
-    $parts = explode(",", $line);
+    $cols = str_getcsv($line);
 
-    if(count($parts) >= 4 && trim($parts[1]) == $email) {
-        $parts[3] = $newpass; // replace password
+    // pad to 11 fields
+    for ($i=0;$i<11;$i++) if (!isset($cols[$i])) $cols[$i] = "none";
+
+    if (trim($cols[1]) === $email) {
+        $cols[4] = $hash;  // new hashed password
         $found = true;
     }
 
-    fwrite($fw, implode(",", $parts) . "\n");
+    fputcsv($fw, $cols);
 }
 
 fclose($fr);
 fclose($fw);
 
-if($found) {
-    rename($temp, $file);
+if ($found) {
+    rename($tmp, $src);
     echo "<h3 style='color:green; text-align:center;'>Password reset successful!</h3>";
 } else {
-    unlink($temp);
+    unlink($tmp);
     echo "<h3 style='color:red; text-align:center;'>Email not found in donor list.</h3>";
 }
 

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Search Donors</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!doctype html><html><head><meta charset="utf-8"><title>Feedback</title><link rel="stylesheet" href="style.css"></head><body>
 <nav class="navbar">
   <div class="logo"><i class="fa-solid fa-droplet"></i> Blood Donor Finder</div>
 
@@ -25,13 +17,11 @@
   </div>
 </nav>
 <section class="form-section">
-  <h2>Search Donor by Blood Group</h2>
-  <form action="search.php" method="POST" novalidate>
-    <input name="blood" placeholder="A+, O-, AB+, etc." pattern="^(A|B|AB|O)[+-]$" title="A+, O-, AB+" required>
-    <button type="submit">Search</button>
+  <h2>Give Feedback</h2>
+  <form action="feedback.php" method="POST" novalidate>
+    <input name="email" type="email" placeholder="Your email (optional)">
+    <textarea name="message" placeholder="Your feedback" required></textarea>
+    <button type="submit">Send Feedback</button>
   </form>
 </section>
-
-<footer><p>&copy; 2025 Campus Blood Donor Finder</p></footer>
-</body>
-</html>
+<footer><p>&copy; 2025 Campus Blood Donor Finder</p></footer></body></html>

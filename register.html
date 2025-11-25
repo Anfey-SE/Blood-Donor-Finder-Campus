@@ -10,6 +10,7 @@
 <body>
  <nav class="navbar">
   <div class="logo"><i class="fa-solid fa-droplet"></i> Blood Donor Finder</div>
+
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="register.html">Register</a>
@@ -17,24 +18,28 @@
     <a href="search.html">Search</a>
     <a href="request.html">Request</a>
     <a href="profile.html">Profile</a>
-    <a href="reset.html">Reset Password</a>
+    <a href="reset.html">Reset</a>
     <a href="availability.html">Availability</a>
     <a href="admin.html">Admin</a>
-    <a href="history.html">Record Donation</a>
-    <a href="viewhistory.php">View History</a>
+    <a href="history.html">Record</a>
+    <a href="viewhistory.php">History</a>
   </div>
 </nav>
-
   <section class="form-section">
     <h2><i class="fa-solid fa-syringe"></i> Register as Donor</h2>
-    <form action="register.php" method="POST">
-      <input name="name" placeholder="Full Name" required><br>
+    <form action="register.php" method="POST" novalidate>
+      <input name="name" placeholder="Full Name" required>
 
-<input name="email" type="email" placeholder="Email" required>
-<input name="blood" placeholder="Blood Group (e.g., A+)" 
-       pattern="^(A|B|AB|O)[+-]$" 
-       title="Enter valid blood group like A+, O-, AB+" required>
-<input type="password" name="password" placeholder="Password (min 6 chars)" minlength="6" required>
+      <input name="email" type="email" placeholder="Email" required>
+
+      <input name="blood" placeholder="Blood Group (e.g., A+)" 
+             pattern="^(A|B|AB|O)[+-]$" 
+             title="Enter valid blood group like A+, O-, AB+" required>
+
+      <input type="password" name="password" placeholder="Password (min 6 chars)" minlength="6" required>
+
+      <input name="department" placeholder="Department (optional)">
+      <input name="hostel" placeholder="Hostel (optional)">
 
       <button type="submit">Register</button>
     </form>

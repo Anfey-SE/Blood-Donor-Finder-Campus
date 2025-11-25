@@ -1,42 +1,67 @@
 <?php
-$email = $_POST['email'];
-$status = $_POST['status'];
+// update availability flag in donors.txt (index 6)
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: availability.html');
+    exit;
+}
 
-$file = "donors.txt";
-$temp = "temp.txt";
+$email = trim($_POST['email'] ?? '');
+$status = trim($_POST['status'] ?? '');
+
+if ($email === '' || $status === '') {
+    echo "<h3>Please provide email and status.</h3><a href='availability.html'>Back</a>";
+    exit;
+}
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "<h3>Invalid email.</h3><a href='availability.html'>Back</a>";
+    exit;
+}
+
+$val = ($status === 'available') ? '1' : '0';
+
+$src = 'donors.txt';
+if (!file_exists($src)) {
+    echo "<h3>No donors found.</h3><a href='register.html'>Register</a>";
+    exit;
+}
+
+$tmp = sys_get_temp_dir() . '/donors_tmp_' . time() . '_' . rand(1000,9999) . '.csv';
+$fr = fopen($src, 'r');
+$fw = fopen($tmp, 'w');
 $found = false;
 
-$fr = fopen($file, "r");
-$fw = fopen($temp, "w");
+while (($line = fgets($fr)) !== false) {
+    $line = trim($line);
+    if ($line === '') continue;
 
-while(!feof($fr)) {
-    $line = trim(fgets($fr));
-    if($line == "") continue;
-    $parts = explode(",", $line);
+    $cols = str_getcsv($line);
+    for ($i=0; $i<11; $i++) if (!isset($cols[$i])) $cols[$i] = ($i === 4 ? '' : 'none');
 
-    // If donor found, update or append status
-    if(count($parts) >= 4 && trim($parts[1]) == $email) {
-        if(count($parts) == 4) {
-            $parts[] = $status;      // add status if not present
-        } else {
-            $parts[4] = $status;     // update status
-        }
+    if (isset($cols[1]) && strcasecmp(trim($cols[1]), $email) === 0) {
+        $cols[6] = $val; // available field
         $found = true;
     }
-    fwrite($fw, implode(",", $parts) . "\n");
+
+    fputcsv($fw, $cols);
 }
 
 fclose($fr);
 fclose($fw);
 
-if($found) {
-    rename($temp, $file);
-    echo "<h3 style='color:green; text-align:center;'>Availability updated to <u>$status</u>.</h3>";
+if ($found) {
+    if (!rename($tmp, $src)) {
+        $data = file_get_contents($tmp);
+        file_put_contents($src, $data, LOCK_EX);
+        unlink($tmp);
+    }
+    $label = ($val === '1') ? 'Available' : 'Unavailable';
+    echo "<h3 style='color:green; text-align:center;'>Status updated to <u>$label</u>.</h3>";
 } else {
-    unlink($temp);
-    echo "<h3 style='color:red; text-align:center;'>Email not found in donor list.</h3>";
+    unlink($tmp);
+    echo "<h3 style='color:red; text-align:center;'>Email not found.</h3>";
 }
 
-echo "<div style='text-align:center; margin-top:20px;'>
-<a href='index.html'>Back to Home</a></div>";
+echo "<div style='text-align:center; margin-top:20px;'><a href='index.html'>Back to Home</a></div>";
+exit;
 ?>

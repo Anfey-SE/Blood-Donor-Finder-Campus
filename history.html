@@ -7,8 +7,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
- <nav class="navbar">
+<nav class="navbar">
   <div class="logo"><i class="fa-solid fa-droplet"></i> Blood Donor Finder</div>
+
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="register.html">Register</a>
@@ -16,29 +17,23 @@
     <a href="search.html">Search</a>
     <a href="request.html">Request</a>
     <a href="profile.html">Profile</a>
-    <a href="reset.html">Reset Password</a>
+    <a href="reset.html">Reset</a>
     <a href="availability.html">Availability</a>
     <a href="admin.html">Admin</a>
-    <a href="history.html">Record Donation</a>
-    <a href="viewhistory.php">View History</a>
+    <a href="history.html">Record</a>
+    <a href="viewhistory.php">History</a>
   </div>
 </nav>
   <section class="form-section">
-    <h2><i class="fa-solid fa-hand-holding-droplet"></i> Record Donation</h2>
-    <form action="history.php" method="POST">
-      <input name="donor" placeholder="Donor Name" required><br>
-      <input name="email" type="email" placeholder="Donor Email" required><br>
-      <input name="blood" placeholder="Blood Group (e.g., A+)" 
-             pattern="^(A|B|AB|O)[+-]$" 
-             title="Enter valid blood group like A+, O-, AB+" required><br>
-      <input name="recipient" placeholder="Recipient Name" required><br>
-      <input name="location" placeholder="Hospital or Location" required><br>
-      <button type="submit">Save Record</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Campus Blood Donor Finder | Made with <i class="fa-solid fa-heart"></i> to save lives</p>
-  </footer>
-</body>
-</html>
+    <h2>Record a Donation</h2>
+  <form action="history.php" method="POST" novalidate>
+    <input name="donor_name" placeholder="Donor name" required>
+    <input name="donor_email" type="email" placeholder="Donor email" required>
+    <input name="blood" placeholder="Blood group" pattern="^(A|B|AB|O)[+-]$" required>
+    <input name="recipient" placeholder="Recipient name" required>
+    <input name="location" placeholder="Location / Hospital" required>
+    <input name="date" type="date" required>
+    <button type="submit">Save Record</button>
+  </form>
+</section>
+<footer><p>&copy; 2025 Campus Blood Donor Finder</p></footer></body></html>

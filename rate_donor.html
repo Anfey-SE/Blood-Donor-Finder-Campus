@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Rate Donor</title><link rel="stylesheet" href="style.css"></head><body>
+<nav class="navbar">
+  <div class="logo"><i class="fa-solid fa-droplet"></i> Blood Donor Finder</div>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="register.html">Register</a>
+    <a href="login.html">Login</a>
+    <a href="search.html">Search</a>
+    <a href="request.html">Request</a>
+    <a href="profile.html">Profile</a>
+    <a href="reset.html">Reset</a>
+    <a href="availability.html">Availability</a>
+    <a href="admin.html">Admin</a>
+    <a href="history.html">Record</a>
+    <a href="viewhistory.php">History</a>
+  </div>
+</nav>
+
+<section class="form-section">
+  <h2>Rate a Donor</h2>
+  <form action="rate_donor.php" method="POST" novalidate>
+    <input name="requester_email" type="email" placeholder="Your email" required>
+    <input name="donor_email" type="email" placeholder="Donor email" required>
+    <label>Rating (1-5)</label>
+    <input name="rating" type="number" min="1" max="5" required>
+    <textarea name="comment" placeholder="Optional comment"></textarea>
+    <button type="submit">Submit Rating</button>
+  </form>
+</section>
+<footer><p>&copy; 2025 Campus Blood Donor Finder</p></footer></body></html>

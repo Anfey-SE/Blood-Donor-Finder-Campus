@@ -9,6 +9,7 @@
 <body>
 <nav class="navbar">
   <div class="logo"><i class="fa-solid fa-droplet"></i> Blood Donor Finder</div>
+
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="register.html">Register</a>
@@ -16,28 +17,27 @@
     <a href="search.html">Search</a>
     <a href="request.html">Request</a>
     <a href="profile.html">Profile</a>
-    <a href="reset.html">Reset Password</a>
+    <a href="reset.html">Reset</a>
     <a href="availability.html">Availability</a>
     <a href="admin.html">Admin</a>
-    <a href="history.html">Record Donation</a>
-    <a href="viewhistory.php">View History</a>
+    <a href="history.html">Record</a>
+    <a href="viewhistory.php">History</a>
   </div>
 </nav>
+<section class="form-section">
+  <h2><i class="fa-solid fa-toggle-on"></i> Update Availability</h2>
+  <form action="availability.php" method="POST" novalidate>
+    <input type="email" name="email" placeholder="Your registered email" required>
+    <select name="status" required>
+      <option value="available">Available</option>
+      <option value="unavailable">Unavailable</option>
+    </select>
+    <button type="submit">Update Status</button>
+  </form>
+</section>
 
-  <section class="form-section">
-    <h2><i class="fa-solid fa-toggle-on"></i> Update Availability</h2>
-    <form action="availability.php" method="POST">
-      <input type="email" name="email" placeholder="Your registered email" required><br>
-      <select name="status" required>
-        <option value="available">Available</option>
-        <option value="unavailable">Unavailable</option>
-      </select><br>
-      <button type="submit">Update Status</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Campus Blood Donor Finder | Made with <i class="fa-solid fa-heart"></i> to save lives</p>
-  </footer>
+<footer>
+  <p>&copy; 2025 Campus Blood Donor Finder</p>
+</footer>
 </body>
 </html>

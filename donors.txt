@@ -1,0 +1,5 @@
+saad,saad125@gmail.com,B+,***,,1,1,none,none,none,none
+Amna,amnahafeez125@gmail.com,none,A+,$2y$10$K8u24LQKi8TllcWNYVcAKuPKsoZEoiceYNEIk8jYzqHoyHgZFFBIG,1,0,none,2025-11-25,0,0
+fatima,fatima@gmail.com,none,B+,$2y$10$I2l.Q488CliYrLTnllm8KOFSaJmQ4pkLzUa68OYPtvptR7AYvGee6,1,1,none,none,0,0
+hajra,hajra@gmail.com,none,B-,$2y$10$PtEjcO0ulo80roapMvm41.IjyJ40yM0Tha04oAFXyi72T5U2G.UCy,0,1,none,none,0,0
+hassan,hassan@gmail.com,none,A+,$2y$10$U08oudIuqER4jkTFhbcOnOhnmfHaW4rRTotrCVlYEypYXqqKghsKe,1,1,none,none,0,0
